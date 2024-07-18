@@ -78,7 +78,10 @@ public class DBConfig {
 		return new DataSourceTransactionManager(dataSource);
 	}
 	
-	
+	/**
+	 * SqlSessionTemplatae => insert select update delete
+	 * DataSourceTransactionManager => SqlSessionTemplate Commit, Rollback
+	 */
 	
 	
 }
