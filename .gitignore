@@ -1,4 +1,4 @@
 /.metadata/
-
+**/node_modules/
 **/config.properties
 **/application.properties

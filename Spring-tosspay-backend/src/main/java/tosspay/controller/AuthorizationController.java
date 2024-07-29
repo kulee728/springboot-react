@@ -73,7 +73,6 @@ public class AuthorizationController {
 				"code", code
 				); //Map.of : 가져온 값을 보호하기 위한 unModifiable Map 생성
 		
-		
 		HttpEntity<Map<String,String>> entity = new HttpEntity<>(requestBody,headers);
 		//HTTP 요청의 본문과 요청 조건사항이 담긴 header를 한꺼번에 전달
 		
