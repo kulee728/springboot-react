@@ -17,9 +17,10 @@ function App() {
    // viewAllUser();
     viewAllUserAsync();
     userChangeState.current = false;
-  },[])
+  })
 
   //1. axios success/fail 에 대한 결과처리
+  /*
   const viewAllUser = () =>{
     axios.get("/users") //controller GetMapping 에서 /users 주소를 바라보기 때문에
       .then(res=>{
@@ -28,7 +29,7 @@ function App() {
       .catch(err=>{
         console.log("axios.get /findAllUser err!",err);
       })
-  }
+  }*/
 
   const viewAllUserAsync = async()=>{
     const res = await axios.get("/users");
@@ -36,6 +37,7 @@ function App() {
   };
 
   const addUser = async(user) =>{
+    // addUser();
     const res = await axios.post("/users",user);
     setUsers([...users],res.data);
     userChangeState.current = true;

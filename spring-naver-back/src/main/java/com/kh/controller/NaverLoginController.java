@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/naver")
 public class NaverLoginController {
 	
 	/*
@@ -37,9 +40,10 @@ public class NaverLoginController {
 	
 	@GetMapping("/naverLogin")
 	public String naverLogin() {
+		log.info("억까야");
 		String api_url = "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=" 
-	+ clientId + "&redirect_uri=" + redirectURI + "&state=" + state;
-		return "<a href='"+ api_url + "'><img height='50' src='http://static.nid.naver.com/oauth/small_g_in.PNG'/></a>";
+				+ clientId + "&redirect_uri=" + redirectURI + "&state=" + state;
+					return "3<a href='"+ api_url + "'><img height='50' src='http://static.nid.naver.com/oauth/small_g_in.PNG'/></a>";
 	}
 	
 	/*

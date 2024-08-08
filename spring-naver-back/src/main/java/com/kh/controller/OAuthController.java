@@ -18,6 +18,7 @@ import com.mysql.cj.Session;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
+@RequestMapping("/api")
 public class OAuthController {
 	
 	@Value("${naver.client-id}")
@@ -79,7 +80,7 @@ public class OAuthController {
 		*/
 	
 		return "redirect:";
-	}
+	}          
 	
 	@GetMapping("/userInfo")
 	private Map<String,Object> userInfo(HttpSession session){
