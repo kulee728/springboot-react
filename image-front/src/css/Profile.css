@@ -1,0 +1,32 @@
+.profile-thumbnail{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px
+}
+
+.profile-thumbnail div{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    box-shadow: 0 0px 5px rgba(0,0,0,0.2);
+    background-color: #fff;
+    /* 이미지가 변화는 시간 효과. 하단 코드는
+    0.3초에 걸쳐 변화한다.
+    ease 설정은 이미지가 천천히->빨리->천천히 변화하게 한다.
+    linear 는 이미지가 일정한 속도로 변한다.
+    */
+    transition:transform 0.3s ease ;
+
+}
+.profile-thumbnail div:hover{
+    transform: scale(2.1);
+}
+
+.profile-thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

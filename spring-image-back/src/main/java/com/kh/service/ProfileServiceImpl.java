@@ -35,7 +35,7 @@ public class ProfileServiceImpl implements ProfileService {
 	}
 
 	@Override
-	public void uploadProfile(MultipartFile[] files, String username,String profileImageUrl) {
+	public void uploadProfile(MultipartFile[] files, String username) {
 		File uploadDirFile = new File(profileDir);
 		if(!uploadDirFile.exists()) {
 			if(!uploadDirFile.mkdirs()) {

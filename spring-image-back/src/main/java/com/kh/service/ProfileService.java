@@ -9,5 +9,5 @@ import com.kh.dto.UserProfile;
 public interface ProfileService {
 	List<UserProfile> getProfiles();
 	void insertProfile(UserProfile userProfile);
-	void uploadProfile(MultipartFile[] files, String username,String profileImageUrl);
+	void uploadProfile(MultipartFile[] files, String username);
 }

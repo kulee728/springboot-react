@@ -10,6 +10,14 @@
 }
 
 .banner-text {
+
+    /*
+    한 공간 내 가운데에 특정 값이 위치하길 원할 때 쓰는 css 공식
+    position: absolute; 절대 위치 : 특정위치로 고정 할 때 사용
+    top: 50%; div 태그 내 맨 바깥 div 높이를 가운데로 맞추기 
+    left: 50%; div 태그 내 맨 바깥 div 왼쪽 가 최를 기준으로 가운데 맞추기
+    transform: translate(-50%, -50%); 최종 위치 조정. 나를 감싸는 div 와 내가 존재하는 div 내 가운데
+    */
     position: absolute;
     top: 50%;
     left: 50%;

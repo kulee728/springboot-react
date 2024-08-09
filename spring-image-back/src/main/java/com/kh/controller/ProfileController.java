@@ -28,12 +28,11 @@ public class ProfileController {
 	}
 	
 	@PostMapping("/upload")
-	public ResponseEntity<String> insertProfile(@RequestParam MultipartFile[] files,
-			@RequestParam String username,
-			@RequestParam("profileImageUrl") String profileImageUrl
+	public ResponseEntity<String> insertProfile(@RequestParam("files") MultipartFile[] files,
+			@RequestParam("username") String username
 			) {
 		
-		service.uploadProfile(files,username,profileImageUrl);
+		service.uploadProfile(files,username);
 		return ResponseEntity.ok("이미지 업로드 성공");
 	}
 	
