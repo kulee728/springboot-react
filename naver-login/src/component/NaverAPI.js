@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
 
-const Login = () => {
+const NaverAPI = () => {
     
   return (
     <>
@@ -18,4 +18,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default NaverAPI;

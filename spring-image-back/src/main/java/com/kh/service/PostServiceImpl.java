@@ -84,5 +84,10 @@ public class PostServiceImpl implements PostService{
 		title.equals(fileNames);
 	}
 	//ㄷ데이터베이스에 이미지 이름, 이미지 경로 넣어주기
-
+	@Override
+	public void updatePost(Post post) {
+		postMapper.updatePost(post);
+		//이미지 저장된 곳에서 기존 이미지를 삭제해야함.
+		
+	}
 }

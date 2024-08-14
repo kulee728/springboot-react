@@ -2,17 +2,18 @@ package com.kh.dto;
 
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor //기본생성자
+@AllArgsConstructor//필수생성자
 public class NaverUser {
-    int user_id;
-    String id;
-    String email;
-    String name;
-    String password;
-    String profileImage;
-    String created_at;
+	private String id;
+	private String email;
+	private String nickname;
+	private String name;
+	private String gender;
+	private String profileImage;
+	private String password;
+
 }

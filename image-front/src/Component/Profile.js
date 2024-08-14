@@ -6,7 +6,13 @@ const Profile = () => {
   const [files, setFiles] = useState([]);
   const [username, setUsername] = useState("");
   const [profile,setProfile] = useState([]);
+  const [userId,setUserId] = useState(null);
 
+    const nicknameUpdater = (p)=>{
+        setUserId(p.userId); //수정할 사용자 id
+        setUsername(p.username);
+
+    }
     const fileChanger= async (e)=>{
         setFiles(Array.from(e.target.files));
 

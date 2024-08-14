@@ -1,25 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './APILogin';
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
-import UserInfo from './UserInfo';
-//react 에서는 html 파일이 1개이므로 각 js 파일의 경로를 router 를 이용해서 설정한다.
-//BrowserRouter, Router는 웹 전체적인 경로를 뜻한다
-//Switch는  경로들
-//BrowserRouter - Routes - Route1, Rout2 ...구조 혹은
-//Router - switch - Route1,.. 구조이다.
+import NaverAPI from './component/NaverAPI';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import NaverSignUp from './component/NaverSignUp';
+import { useEffect, useState } from 'react';
+import Header from './component/layout/Header';
+import AuthContext from './component/layout/AuthContext';
+import Login from './component/Login';
+// html파일이 1개 밖에 없는 React에서는 
+// Router를 이용해서 각 js파일의 경로를 설정
+// BrowserRouter = Router : 웹에 전체적인 경로음
+// Switch   -> Routes     : 경로들
+// Route                  : 경로
 function App() {
+  const [loginMember,setLoginMember] = useState(null);
+  
+  //로그인 정보 존재시 localStorage 저장
+  useEffect(()=>{
+    if(loginMember){
+      localStorage.setItem("loginMember",JSON.stringify(loginMember));
+    }
+  },[loginMember]);
+  
+  useEffect(()=>{
+    const savedMember = localStorage.getItem("loginMember");
+    if(savedMember){
+      setLoginMember(JSON.parse(savedMember)); //데이터 손실 우려, JSON 변환
+    }
+  },[])
+
   return (
-    <div className="App">
-      <BrowserRouter>
+    <AuthContext.Provider value={{loginMember,setLoginMember}}>
+      <Router>
+        <Header/>
         <Routes>
-          <Route>
-            <Route path='/' element={<Login/>}></Route>
-            <Route path='/userinfo' element={<UserInfo/>}></Route>
-          </Route>
+          <Route path='/login' element={<Login/>  } />
+          <Route path='/api/naver' element={<NaverAPI     />  } />
+          <Route path='/signup/naver' element= { <NaverSignUp    />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Router>
+    </AuthContext.Provider>
+    
   );
 }
 
