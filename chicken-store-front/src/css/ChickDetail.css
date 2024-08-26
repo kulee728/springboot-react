@@ -1,0 +1,51 @@
+.chicken-detail-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+}
+.chicken-detail-container:hover {
+
+    /*
+    transform 변화를 준다.
+    transform : 여러 기능을 작성할 때 띄어쓰기로 작성
+
+     translateY = 세로로 움직임  
+    -숫자px 위로 움직임
+    +숫자px 아래로 움직임
+
+    translateX = 가로로 움직임  
+        -숫자px 왼쪽으로 움직임
+        +숫자px 오른쪽로 움직임
+
+    translateZ = 3D형태의 움직임
+    주로   rotateX(50deg) rotateY(50deg) 과 사용
+    degree = 각도 deg 줄임말
+     rotateX(50deg) x축을 기준으로 50도 회전
+     rotateY(50deg) y축을 기준으로 50도 회전
+
+     0deg   = 회전하지 않은 상태
+     90deg  = 직각으로 회전한 상태
+     180deg = 반대방향으로 회전한 상태
+     360deg = 원래 위치로 돌아온 상태
+    */
+    /*transform: translateZ(80px) rotateX(50deg) rotateY(50deg);
+    /*transform: translateY(80px)  translateX(80px);*/
+}
+
+.chicken-detail-container h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.chicken-detail-container p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.5; /*라인별 세로 크기 조정*/
+    margin: 10px 0;
+}
